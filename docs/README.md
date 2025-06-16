@@ -1,7 +1,7 @@
 Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Graysen Wargo
 ==================================================================================================================================
 
-* 🌍  Located in Florence Al
+* 🌍  Located in Florence, AL
 * 🧠  I'm most knowledgeable in Java and Python programming
 * 🤝  I'm in the process of learning HTML, CSS, and JavaScript
 * ⚡  I love learning knew things, especially when it comes to technology.
