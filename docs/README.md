@@ -4,7 +4,8 @@ Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-912
 * 🌍  Located in Florence Al
 * 🧠  I'm most knowledgeable in Java and Python programming
 * 🤝  I'm in the process of learning HTML, CSS, and JavaScript
-* ⚡  I love learning knew things, especially when it comes to technology. 
+* ⚡  I love learning knew things, especially when it comes to technology.
+* 🐈  My favorite animals are cats
   
 ### Skills
 
