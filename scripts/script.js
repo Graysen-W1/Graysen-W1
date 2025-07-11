@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Document is ready
     console.log("hello console!");
+    checkCookie();
     addExampleBlogEntry();
-    setStandardCookie();
     displayUserProfile();
   });
 
