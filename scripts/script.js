@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("hello console!");
     checkCookie();
     addExampleBlogEntry();
-    displayUserProfile();
+    loadDataFromServer();
   });
 
 function addExampleBlogEntry() {
@@ -60,4 +60,27 @@ function checkCookie() {
       setCookie("username", user, 365);
     }
   }
+}
+
+// Load in JSON data
+// source: https://www.w3schools.com/js/js_api_fetch.asp
+// source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+// source: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+function loadDataFromServer() {
+    fetch('https://graysen-W1.github.io/Blog-Data/blog-entries.json')
+        .then(response => response.json())
+        .then(data => {
+            const blogContainer = document.getElementById('blog-entries');
+            for (let i = 0; i < data.devBlogEntries.length; i++) {
+                const post = data.devBlogEntries[i];
+                const newBlogEntry = document.createElement('div');
+                newBlogEntry.className = 'blog-entry';
+                newBlogEntry.innerHTML = `
+                    <h4 class="blog-title"><i class="bi bi-pencil-square"></i>${post.title}</h4>
+                    <p>${post.text}</p>
+                    <small class="text-muted" style="padding-left: 15px; display: block; margin-top: 10px;">Date: ${post.date} | Topic: ${post.topic} | Author: ${post.author}</small>
+                `;
+                blogContainer.appendChild(newBlogEntry);
+            }
+        });
 }
