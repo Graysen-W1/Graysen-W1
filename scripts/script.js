@@ -67,20 +67,17 @@ function checkCookie() {
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 // source: https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
 function loadDataFromServer() {
-    fetch('https://graysen-W1.github.io/Blog-Data/blog-entries.json')
-        .then(response => response.json())
-        .then(data => {
-            const blogContainer = document.getElementById('blog-entries');
-            for (let i = 0; i < data.devBlogEntries.length; i++) {
-                const post = data.devBlogEntries[i];
-                const newBlogEntry = document.createElement('div');
-                newBlogEntry.className = 'blog-entry';
-                newBlogEntry.innerHTML = `
-                    <h4 class="blog-title"><i class="bi bi-pencil-square"></i>${post.title}</h4>
-                    <p>${post.text}</p>
-                    <small class="text-muted" style="padding-left: 15px; display: block; margin-top: 10px;">Date: ${post.date} | Topic: ${post.topic} | Author: ${post.author}</small>
-                `;
-                blogContainer.appendChild(newBlogEntry);
-            }
-        });
+fetch('https://graysen-W1.github.io/Blog-Data/blog-entries.json')
+.then(response => response.json())
+.then(data => {
+    for (let i = 0; i < data.devBlogEntries.length; i++) {
+        document.getElementById('blog-entries').innerHTML += `
+        <div class="blog-entry">
+            <h4 class="blog-title"><i class="bi bi-pencil-square"></i>${data.devBlogEntries[i].title}</h4>
+            <p>${data.devBlogEntries[i].text}</p>
+            <small class="text-muted" style="padding-left: 15px; display: block; margin-top: 10px;">Date: ${data.devBlogEntries[i].date} | Topic: ${data.devBlogEntries[i].topic} | Author: ${data.devBlogEntries[i].author}</small>
+        </div>
+        `;
+    }
+});
 }
